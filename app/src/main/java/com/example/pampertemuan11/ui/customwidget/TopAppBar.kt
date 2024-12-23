@@ -18,9 +18,8 @@ import androidx.compose.ui.unit.sp
 fun TopAppBar(
     onBack: () -> Unit,
     showBackButton: Boolean = true,
-    judul: String,
-    modifier: Modifier
-) {
+    judul: String
+){
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -42,7 +41,6 @@ fun TopAppBar(
             }
         }
 
-        // Teks judul
         Text(
             text = judul,
             fontSize = 25.sp,
