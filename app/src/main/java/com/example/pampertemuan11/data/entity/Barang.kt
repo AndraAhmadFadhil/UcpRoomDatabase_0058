@@ -18,9 +18,9 @@ import androidx.room.PrimaryKey
 data class Barang (
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    val namaBrg: String,
-    val deskripsiBrg: String,
-    val hargaBrg: String,
-    val stokBrg: String,
+    val nama: String,
+    val deskripsi: String,
+    val harga: String,
+    val stok: String,
     val namaSupplier: String
 )
