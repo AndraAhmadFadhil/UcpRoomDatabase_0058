@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import com.example.pampertemuan11.data.entity.Barang
+import com.example.pampertemuan11.data.entity.Supplier
 import kotlinx.coroutines.flow.Flow
 
 
@@ -16,11 +17,14 @@ interface BarangDao {
         barang: Barang
     )
 
-    @Query("SELECT * FROM barang ORDER BY namaBrg ASC")
+    @Query("SELECT * FROM barang ORDER BY nama ASC")
     fun getAllBarang(): Flow<List<Barang>>
 
-    @Query("SELECT * FROM barang WHERE idBrg = idBrg")
-    fun getBarang (id: String): Flow<Barang>
+    @Query("SELECT * FROM barang WHERE nama = :nama")
+    fun getNamaBarang (id: String): Flow<Barang>
+
+    @Query("SELECT * FROM supplier WHERE nama = :nama")
+    fun getNamaSuplier(nama: String): Flow<Supplier>
 
     @Delete
     suspend fun deleteBarang(barang: Barang)
