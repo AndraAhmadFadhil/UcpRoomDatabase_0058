@@ -11,7 +11,7 @@ import androidx.room.PrimaryKey
 data class Supplier (
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    val namaSupplier: String,
-    val kontakSupplier: String,
-    val alamatSupplier: String
+    val nama: String,
+    val kontak: String,
+    val alamat: String
 )
