@@ -1,12 +1,16 @@
 package com.example.pampertemuan11.data.entity
 
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "supplier")
+@Entity(
+    tableName = "supplier",
+    indices = [Index(value = ["nama"], unique = true)]
+)
 data class Supplier (
-    @PrimaryKey
-    val idSupplier: String,
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
     val namaSupplier: String,
     val kontakSupplier: String,
     val alamatSupplier: String
