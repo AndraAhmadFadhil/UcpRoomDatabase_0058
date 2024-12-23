@@ -2,6 +2,12 @@ package com.example.pampertemuan11.ui.viewmodel
 
 import com.example.pampertemuan11.data.entity.Barang
 
+data class BarUIState(
+    val barangEvent: BarangEvent = BarangEvent(),
+    val isEntrValid: FormErrorStateBar = FormErrorStateBar(),
+    val snackbarMessage: String? = null
+)
+
 data class FormErrorStateBar(
     val id: Int? = null,
     val nama: String? = null,
