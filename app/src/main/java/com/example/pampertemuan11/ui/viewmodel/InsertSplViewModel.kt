@@ -2,6 +2,12 @@ package com.example.pampertemuan11.ui.viewmodel
 
 import com.example.pampertemuan11.data.entity.Supplier
 
+data class SupUIState(
+    val suplierEvent: SuplierEvent = SuplierEvent(),
+    val isEntryValid: FormErrorStateSup = FormErrorStateSup(),
+    val snackbarMessage: String? = null
+)
+
 data class FormErrorStateSup(
     val id: Int? = null,
     val nama: String? = null,
