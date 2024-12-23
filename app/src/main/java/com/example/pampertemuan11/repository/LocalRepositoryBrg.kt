@@ -1,7 +1,8 @@
-package com.example.pampertemuan11.data.repository
+package com.example.pampertemuan11.repository
 
 import com.example.pampertemuan11.data.dao.BarangDao
 import com.example.pampertemuan11.data.entity.Barang
+import com.example.pampertemuan11.data.entity.Supplier
 import kotlinx.coroutines.flow.Flow
 
 class LocalRepositoryBrg (
@@ -15,8 +16,8 @@ class LocalRepositoryBrg (
         return barangDao.getAllBarang()
     }
 
-    override fun getBrg(idBrg:String): Flow<Barang> {
-        return barangDao.getBarang(idBrg)
+    override fun getNamaBrg(nama:String): Flow<Barang> {
+        return barangDao.getNamaBarang(nama)
     }
 
     override suspend fun deleteBrg(barang: Barang) {
@@ -25,5 +26,9 @@ class LocalRepositoryBrg (
 
     override suspend fun updateBrg(barang: Barang) {
         barangDao.updateBarang(barang)
+    }
+
+    override fun getNamaSpl(nama: String): Flow<Supplier> {
+        return barangDao.getNamaSuplier(nama)
     }
 }
