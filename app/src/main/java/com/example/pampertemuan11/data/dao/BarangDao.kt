@@ -21,7 +21,7 @@ interface BarangDao {
     fun getAllBarang(): Flow<List<Barang>>
 
     @Query("SELECT * FROM barang WHERE nama = :nama")
-    fun getNamaBarang (id: String): Flow<Barang>
+    fun getNamaBarang (nama: String): Flow<Barang>
 
     @Query("SELECT * FROM supplier WHERE nama = :nama")
     fun getNamaSuplier(nama: String): Flow<Supplier>
